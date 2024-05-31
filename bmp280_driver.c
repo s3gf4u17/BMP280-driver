@@ -53,4 +53,14 @@ void bmp280_readCalibrationData() {
     cd.dig_P9 = buffer[22] | (buffer[23]<<8);
 };
 
+uint8_t bmp280_readRegisterId() {
+    uint8_t address = 0xD0 | 0x80;
+    uint8_t value = 0xFF;
+    gpio_put(bmp280_pin_cs,0);
+    spi_write_blocking(bmp280_port_spi,&address,1);
+    spi_read_blocking(bmp280_port_spi,0,&value,1);
+    gpio_put(bmp280_pin_cs,1);
+    return value;
+}
+
 #endif
