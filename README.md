@@ -12,6 +12,8 @@
     - [bmp280_read_register_id](#bmp280_read_register_id)
     - [bmp280_soft_reset](#bmp280_soft_reset)
     - [bmp280_read_status](#bmp280_read_status)
+    - [bmp280_write_ctrl_meas](#bmp280_write_ctrl_meas)
+    - [bmp280_write_config](#bmp280_write_config)
 - [Example of how to use](#example-of-how-to-use)
 
 <hr>
@@ -41,6 +43,10 @@
 #### bmp280_soft_reset
 
 #### bmp280_read_status
+
+#### bmp280_write_ctrl_meas
+
+#### bmp280_write_config
 
 <hr>
 
