@@ -22,4 +22,6 @@
 
 #### bmp280_pin_cs
 
+<hr>
+
 ### Functions available to the user
