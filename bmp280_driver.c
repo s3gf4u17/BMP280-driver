@@ -32,4 +32,25 @@ typedef struct calib_data_s {
 
 struct calib_data_s cd;
 
+void bmp280_readCalibrationData() {
+    uint8_t address = 0x88 | 0x80;
+    uint8_t buffer[24];
+    gpio_put(bmp280_pin_cs,0);
+    spi_write_blocking(bmp280_port_spi,&address,1);
+    spi_read_blocking(bmp280_port_spi,0,buffer,24);
+    gpio_put(bmp280_pin_cs,1);
+    cd.dig_T1 = buffer[0] | (buffer[1]<<8);
+    cd.dig_T2 = buffer[2] | (buffer[3]<<8);
+    cd.dig_T3 = buffer[4] | (buffer[5]<<8);
+    cd.dig_P1 = buffer[6] | (buffer[7]<<8);
+    cd.dig_P2 = buffer[8] | (buffer[9]<<8);
+    cd.dig_P3 = buffer[10] | (buffer[11]<<8);
+    cd.dig_P4 = buffer[12] | (buffer[13]<<8);
+    cd.dig_P5 = buffer[14] | (buffer[15]<<8);
+    cd.dig_P6 = buffer[16] | (buffer[17]<<8);
+    cd.dig_P7 = buffer[18] | (buffer[19]<<8);
+    cd.dig_P8 = buffer[20] | (buffer[21]<<8);
+    cd.dig_P9 = buffer[22] | (buffer[23]<<8);
+};
+
 #endif
