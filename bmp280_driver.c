@@ -32,7 +32,7 @@ typedef struct calib_data_s {
 
 struct calib_data_s cd;
 
-void bmp280_readCalibrationData() {
+void bmp280_read_calibration_data() {
     uint8_t address = 0x88 | 0x80;
     uint8_t buffer[24];
     gpio_put(bmp280_pin_cs,0);
@@ -53,7 +53,7 @@ void bmp280_readCalibrationData() {
     cd.dig_P9 = buffer[22] | (buffer[23]<<8);
 };
 
-uint8_t bmp280_readRegisterId() {
+uint8_t bmp280_read_register_id() {
     uint8_t address = 0xD0 | 0x80;
     uint8_t value = 0xFF;
     gpio_put(bmp280_pin_cs,0);
@@ -63,7 +63,7 @@ uint8_t bmp280_readRegisterId() {
     return value;
 }
 
-void bmp280_softReset() {
+void bmp280_soft_reset() {
     uint8_t addval[2];
     addval[0] = 0xE0 | 0x7F;
     addval[1] = 0xB6;
