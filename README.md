@@ -7,6 +7,10 @@
     - [bmp280_pin_miso](#bmp280_pin_miso)
     - [bmp280_pin_cs](#bmp280_pin_cs)
 - [Functions available to the user](#functions-available-to-the-user)
+    - [bmp280_setup](#bmp280_setup)
+    - [bmp280_read_calibration_data](#bmp280_read_calibration_data)
+    - [bmp280_read_register_id](#bmp280_read_register_id)
+    - [bmp280_soft_reset](#bmp280_soft_reset)
 
 <hr>
 
@@ -25,3 +29,11 @@
 <hr>
 
 ### Functions available to the user
+
+#### bmp280_setup
+
+#### bmp280_read_calibration_data
+
+#### bmp280_read_register_id
+
+#### bmp280_soft_reset
