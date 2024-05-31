@@ -85,4 +85,22 @@ uint8_t bmp280_read_status() {
     return status;
 }
 
+uint8_t bmp280_write_ctrl_meas(uint8_t osrst, uint8_t osrsp, uint8_t mode) {
+    uint8_t addval[2];
+    addval[0] = 0xF4 | 0x7F;
+    addval[1] = osrst | osrsp | mode;
+    gpio_put(bmp280_pin_cs,0);
+    spi_write_blocking(bmp280_port_spi,&addval,2);
+    gpio_put(bmp280_pin_cs,1);
+}
+
+uint8_t bmp280_write_config(uint8_t tsb, uint8_t filter, uint8_t spi3wen) {
+    uint8_t addval[2];
+    addval[0] = 0xF5 | 0x7F;
+    addval[1] = tsb | filter | spi3wen;
+    gpio_put(bmp280_pin_cs,0);
+    spi_write_blocking(bmp280_port_spi,&addval,2);
+    gpio_put(bmp280_pin_cs,1);
+}
+
 #endif
