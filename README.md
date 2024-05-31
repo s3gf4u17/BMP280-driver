@@ -11,6 +11,7 @@
     - [bmp280_read_calibration_data](#bmp280_read_calibration_data)
     - [bmp280_read_register_id](#bmp280_read_register_id)
     - [bmp280_soft_reset](#bmp280_soft_reset)
+    - [bmp280_read_status](#bmp280_read_status)
 - [Example of how to use](#example-of-how-to-use)
 
 <hr>
@@ -38,6 +39,8 @@
 #### bmp280_read_register_id
 
 #### bmp280_soft_reset
+
+#### bmp280_read_status
 
 <hr>
 

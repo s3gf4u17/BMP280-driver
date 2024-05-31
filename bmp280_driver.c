@@ -72,4 +72,17 @@ void bmp280_soft_reset() {
     gpio_put(bmp280_pin_cs,1);
 };
 
+uint8_t bmp280_read_status() {
+    uint8_t reg = 0xF3 | 0x80;
+    uint8_t val;
+    gpio_put(bmp280_pin_cs,0);
+    spi_write_blocking(bmp280_port_spi,&reg,1);
+    spi_read_blocking(bmp280_port_spi,0,&val,1);
+    gpio_put(bmp280_pin_cs,1);
+    uint8_t measuring = val & 0b00001000;
+    uint8_t im_update = val & 0b00000001;
+    uint8_t status = measuring | im_update;
+    return status;
+}
+
 #endif
