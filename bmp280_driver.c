@@ -63,4 +63,13 @@ uint8_t bmp280_readRegisterId() {
     return value;
 }
 
+void bmp280_softReset() {
+    uint8_t addval[2];
+    addval[0] = 0xE0 | 0x7F;
+    addval[1] = 0xB6;
+    gpio_put(bmp280_pin_cs,0);
+    spi_write_blocking(bmp280_port_spi,&addval,2);
+    gpio_put(bmp280_pin_cs,1);
+};
+
 #endif
