@@ -17,6 +17,7 @@
     - [bmp280_read_raw_temp](#bmp280_read_raw_temp)
     - [bmp280_read_temp](#bmp280_read_temp)
 - [Example of how to use](#example-of-how-to-use)
+    - [Environment setup](#environment-setup)
 
 <hr>
 
@@ -57,3 +58,25 @@
 <hr>
 
 ### Example of how to use
+
+#### Environment setup
+
+Before working with Pico, install all required system packages:
+
+```bash
+sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+```
+
+Then clone the official Pico SDK repository:
+
+```bash
+git clone -b master https://github.com/raspberrypi/pico-sdk ~/pico-sdk/
+cd ~/pico-sdk/
+git submodule update --init
+```
+
+Optionally install install useful tools:
+
+```bash
+sudo apt install gnuplot minicom
+```
