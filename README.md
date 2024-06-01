@@ -143,3 +143,33 @@ sudo minicom -b 115200 -D /dev/ttyACM0 -C datadrop.dat
 ```
 
 #### Results
+
+Minicom preview:
+
+```
+Welcome to minicom 2.7.1
+
+OPTIONS: I18n 
+Compiled on Dec 23 2019, 02:06:26.
+Port /dev/ttyACM0, 03:45:13
+
+Press CTRL-A Z for help on special keys
+
+20.16
+20.15
+20.17
+20.17
+```
+
+Datadrop plotted using gnuplot command:
+
+```
+set title "The process of warming up the bmp280 sensor"
+set xlabel "time [50ms]"
+set ylabel "temperature [degC]"
+set terminal png size 1000,600
+set output "plot.png"
+plot "data" using 1 with lines notit
+```
+
+![plot](https://github.com/s3gf4u17/rpipico-bmp280-driver/assets/86662946/ce2bc5c2-8c09-4820-84c1-7a6f38bba87c)
