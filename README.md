@@ -14,6 +14,8 @@
     - [bmp280_read_status](#bmp280_read_status)
     - [bmp280_write_ctrl_meas](#bmp280_write_ctrl_meas)
     - [bmp280_write_config](#bmp280_write_config)
+    - [bmp280_read_raw_temp](#bmp280_read_raw_temp)
+    - [bmp280_read_temp](#bmp280_read_temp)
 - [Example of how to use](#example-of-how-to-use)
 
 <hr>
@@ -47,6 +49,10 @@
 #### bmp280_write_ctrl_meas
 
 #### bmp280_write_config
+
+#### bmp280_read_raw_temp
+
+#### bmp280_read_temp
 
 <hr>
 
